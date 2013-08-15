@@ -1,6 +1,7 @@
 var myApp = angular.module('myApp', [])
     .controller('dashboard', function ($scope, $http) {
-        $scope.widgets = $http.get('/status/anaythign').then(function (res) {
+        $scope.widgets = $http.get('/widgets/anaythign').then(function (res) {
+            console.log(res.data[0]);
             return res.data;
         });
     })
