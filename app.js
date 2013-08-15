@@ -150,5 +150,10 @@ app.get('/widgets/:entid', function(req,res){
     res.end();
 });
 
+app.get('/:entid', function(req,res) {
+	var ent = req.params.entid;
+	res.redirect('/#/index.html?entid='+ent);
+});
+
 console.dir('Express started listening on port 8000');
 app.listen(8000);
