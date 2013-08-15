@@ -32,17 +32,81 @@ var status = [
 	}
 }];
 
+var profile = [
+{
+	profile: {
+		name: 'Profile',
+		stamp: 'Last Update 7/15 by Tom Yang',
+		fields: [
+			{ label: 'Description', type: 'longtext', value: 'Customer reported issues.' },
+			{label: 'Planned Start', type: 'date', value: new Date(1234577892021)},
+			{label: 'Planned Finish', type: 'date', value: new Date(2111578892021)},
+			{label: 'Approval Status', type: 'text', value: 'Pending'},
+			{label: 'Priority', type: 'text', value: 'Low'},
+			{label: 'Manager', type: 'text', value: 'Mr. T'},
+			{label: 'Phase', type: 'text', value: 'Planning'},
+			{label: 'Sponsor', type: 'text', value: 'Tang'},
+			{label: 'Budget', type: 'text', value: 33},
+			{label: 'Program', type: 'text', value: 'Customer Betterment'},
+			{label: 'Overall Score', type: 'text', value: 1.2},
+			{label: 'Risk Score', type: 'text', value: 1.1},
+			{label: 'Benefit Score', type: 'text', value: 0.7}
+		]
+	}
+},
+{
+	profile:{
+		name: 'Profile',
+		stamp: 'Last Update 7/15 by Herpa Derpa',
+		fields: [
+			{ label: 'Description', type: 'longtext', value: 'Profile for the Herpin of the derps.' },
+			{label: 'Planned Start', type: 'date', value: new Date(2234577892021)},
+			{label: 'Planned Finish', type: 'date', value: new Date(2234578892021)},
+			{label: 'Approval Status', type: 'text', value: 'GetRDone'},
+			{label: 'Priority', type: 'text', value: 'Numero Uno'},
+			{label: 'Manager', type: 'text', value: 'Bill Paxton'},
+			{label: 'Phase', type: 'text', value: 'Locked'},
+			{label: 'Sponsor', type: 'text', value: 'Bill Murray'},
+			{label: 'Budget', type: 'text', value: 1000000},
+			{label: 'Program', type: 'text', value: 'Yes'},
+			{label: 'Overall Score', type: 'text', value: 8008},
+			{label: 'Risk Score', type: 'text', value: 1337},
+			{label: 'Benefit Score', type: 'text', value: 9001}
+		]
+	} 
+}];
+
 app.use(express.static(__dirname));
+function getStatusForEnt(ent) {
+	return ent==='derp' ? status[1] : status[0];
+
+}
+
+function getProfileForEnt(ent) {
+	return ent==='derp' ? profile[1] : profile[0];
+}
+
+app.get('/profile/:entid', function(req,res) {
+	var ent = req.params.entid;
+	console.dir('serving /profile/'+ent);
+	res.send(JSON.stringify(getProfileForEnt(ent)));
+	res.end();
+});
 
 app.get('/status/:entid', function(req,res) {
 	var ent = req.params.entid;
 	console.dir('serving /status/'+ent);
-	if(ent === '11111111-1111-1111-1111-111111111111') {
-		res.send(JSON.stringify(status[1]));
-	}
-	else {
-		res.send(JSON.stringify(status[0]));
-	}
+	res.send(JSON.stringify(getStatusForEnt(ent)));
+	res.end();
+});
+
+app.get('/widgets/:entid', function(req,res){
+	var ent = req.params.entid;
+	console.dir('serving /widgets/' + ent);
+	var data =[];
+	data.push(getStatusForEnt(ent));
+	data.push(getProfileForEnt(ent));
+	res.send(JSON.stringify(data));
 	res.end();
 });
 
