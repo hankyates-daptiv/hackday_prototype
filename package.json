@@ -8,6 +8,7 @@
   "author": "",
   "dependencies": {
     "node-sass": "~0.6.4",
-    "node-watch": "~0.3.4"
+    "node-watch": "~0.3.4",
+    "express": "~3.3.5"
   }
 }
