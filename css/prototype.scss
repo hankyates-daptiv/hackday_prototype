@@ -209,7 +209,41 @@ main {
     .widget-body {
         padding:.5em .8em;
 
-        .longtext, dd.longtext{
+        dl.text{
+            border-top:.1em dotted #b4b7b4;
+            overflow: auto;
+        }
+
+        dt.text {
+            float: left;
+            font-weight: 700;
+            margin-right: 0.5em;
+            margin-bottom: 0.2em;
+        }
+
+        dd.text {
+            display:inline-block;
+            float: right;
+            padding:.5em .8em;
+            margin:0em;
+            border:0em;
+            width:45%;
+            text-align:right;
+        }
+
+        dl.date {
+            overflow:auto;
+        }
+
+        dt.date {
+            float: left;
+        }
+
+        dd.date{
+            float: right;
+        }
+
+        dl.longtext {
         }
 
         dt.longtext{
@@ -218,22 +252,7 @@ main {
             margin-bottom: 0.2em;
         }
 
-        dd.text {
-            padding:.5em .8em;
-            margin:0em;
-            border:0em;
-            width:45%;
-            display:inline-block;
-            border-top:.1em dotted #b4b7b4;
-            text-align:right;
-        }
-
-        dt.text {
-            display: inline-block;
-            font-weight: 700;
-            margin-right: 0.5em;
-            margin-bottom: 0.2em;
-            float: left;
+        dd.longtext{
         }
 
         table {

@@ -145,24 +145,32 @@ main {
       font-size: 0.9em; }
   .widget .widget-body {
     padding: 0.5em 0.8em; }
-    .widget .widget-body dt.longtext {
-      display: block;
+    .widget .widget-body dl.text {
+      border-top: 0.1em dotted #b4b7b4;
+      overflow: auto; }
+    .widget .widget-body dt.text {
+      float: left;
       font-weight: 700;
+      margin-right: 0.5em;
       margin-bottom: 0.2em; }
     .widget .widget-body dd.text {
+      display: inline-block;
+      float: right;
       padding: 0.5em 0.8em;
       margin: 0em;
       border: 0em;
       width: 45%;
-      display: inline-block;
-      border-top: 0.1em dotted #b4b7b4;
       text-align: right; }
-    .widget .widget-body dt.text {
-      display: inline-block;
-      font-weight: 700;
-      margin-right: 0.5em;
-      margin-bottom: 0.2em;
+    .widget .widget-body dl.date {
+      overflow: auto; }
+    .widget .widget-body dt.date {
       float: left; }
+    .widget .widget-body dd.date {
+      float: right; }
+    .widget .widget-body dt.longtext {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.2em; }
     .widget .widget-body table {
       width: 100%;
       border-collapse: collapse; }

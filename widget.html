@@ -3,7 +3,7 @@
     <div class="stamped">{{widget.stamp}}</div>
 </div>
 <div class="widget-body">
-    <div ng-repeat="field in widget.fields" ng-switch="field.type" class="field">
+    <div ng-repeat="field in widget.fields" ng-switch="field.type" class="field {{field.type}}">
         <ng-textfield ng-switch-when="text"></ng-textfield>
         <ng-longtextfield ng-switch-when="longtext"></ng-longtextfield>
         <ng-datefield ng-switch-when="date"></ng-datefield>

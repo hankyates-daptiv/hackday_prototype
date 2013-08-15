@@ -56,11 +56,11 @@
         </header>
         <div ng-controller="dashboard">
             <div ng-repeat="widget in widgets" ng-switch="widget.name" id="{{widget.name}}" class="widget" title="{{widget.name}}">
-                <ng-widget ng-switch-when="status"></ng-widget>
-                <ng-widget ng-switch-when="profile"></ng-widget>
-                <ng-Tablewidget ng-switch-when="risks"></ng-Tablewidget>
-                <ng-Tablewidget ng-switch-when="open-issues"></ng-Tablewidget>
-                <ng-Tablewidget ng-switch-when="milestones"></ng-Tablewidget>
+                <ng-widget ng-switch-when="Status"></ng-widget>
+                <ng-widget ng-switch-when="Profile"></ng-widget>
+                <ng-Tablewidget ng-switch-when="Risks"></ng-Tablewidget>
+                <ng-Tablewidget ng-switch-when="Open-issues"></ng-Tablewidget>
+                <ng-Tablewidget ng-switch-when="Milestones"></ng-Tablewidget>
             </div>
         </div>
     </main>
