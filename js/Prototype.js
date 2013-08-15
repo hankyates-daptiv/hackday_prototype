@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', [])
     .controller('dashboard', function ($scope, $http) {
-        $scope.widgets = $http.get('/status/11111111-1111-1111-1111-111111111111').then(function (res) {
+        $scope.widgets = $http.get('/widgets').then(function (res) {
             return res.data;
         });
     })
@@ -10,10 +10,10 @@ var myApp = angular.module('myApp', [])
                     templateUrl: 'widget.html'
                 }
     })
-    .directive('ngTableWidget', function () {
+    .directive('ngTablewidget', function () {
         return {
                     restrict: 'EACM',
-                    templateUrl: 'widget.html'
+                    templateUrl: 'table-widget.html'
                 }
     })
     .directive('ngTextfield', function () {
@@ -28,8 +28,11 @@ var myApp = angular.module('myApp', [])
                     templateUrl: 'longtext.html'
                 }
     })
-    .directive('ngdatefield', function () {
+    .directive('ngDatefield', function () {
         return {
+                    controller: function ($scope) {
+                        $scope.field.date = new Date($scope.field.value).toString();
+                    },
                     restrict: 'EACM',
                     templateUrl: 'date.html'
                 }
