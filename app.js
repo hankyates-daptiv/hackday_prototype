@@ -7,11 +7,12 @@ var status = [
 		stamp: 'Last Update 7/17 by Robin Sherwood',
 		fields: [
 			{ label: 'Status Update', type: 'longtext', value: 'Completed phase two check point agreed to move to phase three pending the clusure of the current open issues. Planned finish date was adjuested by one week to acoomodate for the end of quarter.' },
+			{label: 'Last Updated', type: 'date', value: new Date(1400567892021),
 			{label: 'Health', type: 'text', value: 'On Plan'},
 			{label: 'Scope Status', type: 'text', value: 'On Plan'},
 			{label: 'Budget Status', type: 'text', value: 'Needs Help'},
 			{label: 'Estimated Cost', type: 'text', value: 236300},
-			{label: 'Schedule Status', type: 'text', value: 'Attention'},
+			{label: 'Schedule Status', type: 'text', value: 'Attention'}
 		]
 	}
 },
@@ -21,11 +22,12 @@ var status = [
 		stamp: 'Last Update 7/15 by Herpa Derpa',
 		fields: [
 			{ label: 'Status Update', type: 'longtext', value: 'Herpin all the derps in the land.' },
+			{label: 'Last Updated', type: 'date', value: new Date(2234567892021),
 			{label: 'Health', type: 'text', value: 'Herpd'},
 			{label: 'Scope Status', type: 'text', value: 'Derpable'},
 			{label: 'Budget Status', type: 'text', value: 'Herpd'},
 			{label: 'Estimated Cost', type: 'text', value: 31337101},
-			{label: 'Schedule Status', type: 'text', value: 'LOL'},
+			{label: 'Schedule Status', type: 'text', value: 'LOL'}
 		]
 	}
 }];
