@@ -9,6 +9,28 @@ var myApp = angular.module('myApp', [])
                     restrict: 'EACM',
                     templateUrl: 'widget.html'
                 }
+    })
+    .directive('ngTableWidget', function () {
+        return {
+                    restrict: 'EACM',
+                    templateUrl: 'widget.html'
+                }
+    })
+    .directive('ngTextfield', function () {
+        return {
+                    restrict: 'EACM',
+                    templateUrl: 'text.html'
+                }
+    })
+    .directive('ngLongtextfield', function () {
+        return {
+                    restrict: 'EACM',
+                    templateUrl: 'longtext.html'
+                }
+    })
+    .directive('ngdatefield', function () {
+        return {
+                    restrict: 'EACM',
+                    templateUrl: 'date.html'
+                }
     });
-
-
