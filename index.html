@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Daptiv PPM Prototype 4.0</title>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:300,400,700' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="css/default.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/Prototype.js"></script>
+</head>
+<body>
+    <menu type="toolbar" id="global-nav">
+        <li class="home"><a href="#" class="home"><img src="images/daptiv-logo.png" alt="Daptiv Home" /></a></li>
+        <li class="nav-tab"><a href="#">Recent</a></li>
+        <li class="nav-tab"><a href="#">Dashboard</a></li>
+        <li class="nav-tab"><a href="#" class="selected">Projects</a></li>
+        <li class="nav-tab"><a href="#">Requests</a></li>
+        <li class="nav-tab"><a href="#">Tasks</a></li>
+        <li class="nav-tab"><a href="#">Calandar</a></li>
+        <li class="nav-tab"><a href="#">Timesheets</a></li>
+        <li class="nav-tab"><a href="#">Capacity Planner</a></li>
+        <li class="nav-tab"><a href="#">Executive</a></li>
+        <li class="nav-tab"><a href="#">More</a></li>
+    </menu>
+    <main id="workspace-home">
+        <header id="workspace-header">
+            <div id="header-left">
+                <div id="workspace-titles">
+                    <h2 class="workspace-name">FDL 550 Certification</h2>
+                    <h3 class="workspace-type">Workspace Type Name</h3>
+                </div>
+                <button class="view-selector">View Selector</button>
+            </div>
+            <div id="header-right">
+                <menu id="workspaceNav">
+                    <ul>
+                        <li class="homeIcon" id="wsHome"></li>
+                        <li class="nav-tab" id="wsTasks">Tasks</li>
+                        <li class="nav-tab" id="wsIssues">Issues</li>
+                        <li class="nav-tab" id="wsMembers">Members</li>
+                        <li class="nav-tab" id="wsExpenses">Expenses</li>
+                        <li class="nav-tab" id="wsDiscussions">Discussions</li>
+                        <li class="nav-tab" id="wsRisks">Risks</li>
+                        <li class="nav-tab" id="wsDocuments">Documents</li>
+                        <li class="nav-tab" id="wsProjectFinancials">Project Financials</li>
+                        <li class="gearIcon" id="wsGear"></li>
+                    </ul>
+                </menu>
+                <div id="modal-buttons">
+                    <button class="wsButton">Update Status</button>
+                    <button class="wsButton">Edit Profile</button>
+                </div>
+            </div>
+        </header>
+        <div id="status" class="widget" title="Status">
+            <div class="widget-header">
+                <div class="title">Status</div>
+                <div class="stamped">Last Update 7/17 by Robin Sherwood</div>
+            </div>
+            <div class="widget-body">
+                <dl>
+                    <dt class="longtext">Status Update</dt>
+                    <dd class="longtext">
+                        Completed phase two check point agreed to move to phase three pending the clusure of the current open issues. Planned finish date was adjuested by one week to acoomodate for the end of quarter.
+                    </dd>
+                    <dt class="text">Health</dt>
+                    <dd class="text">On Plan</dd>
+
+                    <dt class="text">Scope Status</dt>
+                    <dd class="text">On Plan</dd>
+
+                    <dt class="text">Budget Status</dt>
+                    <dd class="text">Attention</dd>
+
+                    <dt class="text">Estimated Cost</dt>
+                    <dd class="text">$236,300.00</dd>
+
+                    <dt class="text">Schedule Status</dt>
+                    <dd class="text">Attention</dd>
+
+                    <dt class="text">Estimated Cost</dt>
+                    <dd class="text">$236,300.00</dd>
+
+                    <dt class="longtext">Schedule Status Notes</dt>
+                    <dd class="longtext">Current updates to the resource plan have yet to impact the schedule so we are looking ok until the first of the month</dd>
+                </dl>
+            </div>
+        </div>
+        <div id="profile" class="widget" title="Profile">
+            <div class="widget-header">
+                <div class="title">Profile</div>
+                <div class="stamped">Last Update 7/17 by Robin Sherwood</div>
+            </div>
+            <div class="widget-body">
+                <dl>
+                    <dt class="longtext">Description</dt>
+                    <dd class="longtext">Conferencing: Give your workforce compelling, productive, and cost-effective conferencing experiences with high quality voice, video, and web conferencing. Customer Care: Get closer to customers, while increasing satisfaction, and loyalty. Proactively connect people with the information, expertise, and support they need.</dd>
+                    <dt class="text">Planned Start</dt>
+                    <dd class="text">04/13/2012</dd>
+                    <dt class="text">Budget</dt>
+                    <dd class="text">$235,940.00</dd>
+                    <dt class="text">Planned Finish</dt>
+                    <dd class="text">06/13/2012</dd>
+                    <dt class="text">Sponsor</dt>
+                    <dd class="text">Chuck Conway</dd>
+                    <dt class="text">Approval Status</dt>
+                    <dd class="text">Approved</dd>
+                    <dt class="text">Program</dt>
+                    <dd class="text">Corp. Cloud Migration</dd>
+                    <dt class="text">Priority</dt>
+                    <dd class="text">High</dd>
+                    <dt class="text">Overall Score</dt>
+                    <dd class="text">12.35</dd>
+                    <dt class="text">Manager</dt>
+                    <dd class="text">Robin Sherwood</dd>
+                    <dt class="text">Risk Score</dt>
+                    <dd class="text">6.00</dd>
+                    <dt class="text">Phase</dt>
+                    <dd class="text">Design</dd>
+                    <dt class="text">Benefit Score</dt>
+                    <dd class="text">6.35</dd>
+                    <dt class="text">Sponsor</dt>
+                    <dd class="text">Chuck Conway</dd>
+                </dl>
+            </div>
+        </div>
+        <div id="risk" class="widget" title="Risk">
+            <div class="widget-header">
+                <div class="title">Risk</div>
+                <div class="stamped">Last Update 7/17 by Robin Sherwood</div>
+            </div>
+            <div class="widget-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Owner</th>
+                            <th>Due Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DNS Configuration</td>
+                            <td>Dave Lindquist</td>
+                            <td>7/26/2012</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Update Project Plan</td>
+                            <td>Tom Ford</td>
+                            <td>7/28/2012</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="open_issues" class="widget" title="Open Issues">
+            <div class="widget-header">
+                <div class="title">Open Issues</div>
+                <div class="stamped">Last Update 7/17 by Robin Sherwood</div>
+            </div>
+            <div class="widget-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Priority</th>
+                            <th>Description</th>
+                            <th>Assignee</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>High</td>
+                            <td>Hardware Backorderd</td>
+                            <td>Jim Peterson</td>
+                            <td>09/25/2013</td>
+                        </tr>
+                        <tr>
+                            <td>High</td>
+                            <td>Switch Failure</td>
+                            <td>Jim Peterson</td>
+                            <td>05/10/2012</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            <td>Contract Negotiations Wit...</td>
+                            <td>Rachel Dawsen</td>
+                            <td>10/14/2012</td>
+                        </tr>
+                        <tr>
+                            <td>Low</td>
+                            <td>Caterer Mix-up</td>
+                            <td>Amy Brandt</td>
+                            <td>10/17/2012</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            <td>ISO Audit Review Meeting...  </td>
+                            <td>Jim Peterson</td>
+                            <td>11/02/2012</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="milestones" class="widget" title="Milestones">
+            <div class="widget-header">
+                <div class="title">Milestones</div>
+                <div class="stamped">Last Update 7/17 by Robin Sherwood</div>
+            </div>
+            <div class="widget-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task Name</th>
+                            <th>%</th>
+                            <th>Planned Finish</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DNS Configuration</td>
+                            <td>Dave Lindquist</td>
+                            <td>7/26/2012</td>
+                        </tr>
+                        <tr>
+                            <td>Update Project Plan</td>
+                            <td>Tom Ford</td>
+                            <td>7/28/2012</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>Company Confidential Copyright &copy; Daptiv 2011</div>
+    </footer>
+</body>
+</html>

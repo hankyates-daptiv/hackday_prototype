@@ -1,0 +1,13 @@
+{
+  "name": "prototype",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+    "node-sass": "~0.6.4",
+    "node-watch": "~0.3.4"
+  }
+}
