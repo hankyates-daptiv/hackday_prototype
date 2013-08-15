@@ -1,5 +1,4 @@
 # Hackday HTML 5 and Angular UI Intro.js Prototype
-=================
 
 ## Super awesome team: 
 * John Emau
