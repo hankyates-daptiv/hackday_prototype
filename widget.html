@@ -1,0 +1,35 @@
+<div class="widget-header">
+    <div class="title">{{widget.name}}</div>
+    <div class="stamped">{{widget.stamp}}</div>
+</div>
+<div ng-repeat="field in widget.fields" class="widget-body">
+    {{field.label}}
+    {{field.type}}
+    {{field.value}}
+    <dl>
+        <dt class="longtext">Status Update</dt>
+        <dd class="longtext">
+            Completed phase two check point agreed to move to phase three pending the clusure of the current open issues. Planned finish date was adjuested by one week to acoomodate for the end of quarter.
+        </dd>
+        <dt class="text">Health</dt>
+        <dd class="text">On Plan</dd>
+
+        <dt class="text">Scope Status</dt>
+        <dd class="text">On Plan</dd>
+
+        <dt class="text">Budget Status</dt>
+        <dd class="text">Attention</dd>
+
+        <dt class="text">Estimated Cost</dt>
+        <dd class="text">$236,300.00</dd>
+
+        <dt class="text">Schedule Status</dt>
+        <dd class="text">Attention</dd>
+
+        <dt class="text">Estimated Cost</dt>
+        <dd class="text">$236,300.00</dd>
+
+        <dt class="longtext">Schedule Status Notes</dt>
+        <dd class="longtext">Current updates to the resource plan have yet to impact the schedule so we are looking ok until the first of the month</dd>
+    </dl>
+</div>

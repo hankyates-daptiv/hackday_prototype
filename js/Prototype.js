@@ -1,8 +1,14 @@
-$(document).ready(function () {
-    $('#global-nav .nav-tab a').eq(2).addClass('selected');
-    $('#global-nav .nav-tab a').click(function (e) {
-        $('#global-nav .selected').removeClass('selected');
-        $(e.target).addClass('selected');
+var myApp = angular.module('myApp', [])
+    .controller('dashboard', function ($scope, $http) {
+        $scope.widgets = $http.get('/status/anything').then(function (res) {
+            return res.data;
+        });
+    })
+    .directive('ngWidget', function () {
+        return {
+                    restrict: 'EACM',
+                    templateUrl: 'widget.html'
+                }
     });
 
-});
+
