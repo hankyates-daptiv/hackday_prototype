@@ -34,23 +34,21 @@
                 <button class="view-selector">View Selector</button>
             </div>
             <div id="header-right">
-                <menu id="workspaceNav">
-                    <ul>
-                        <li class="homeIcon" id="wsHome"></li>
-                        <li class="nav-tab" id="wsTasks">Tasks</li>
-                        <li class="nav-tab" id="wsIssues">Issues</li>
-                        <li class="nav-tab" id="wsMembers">Members</li>
-                        <li class="nav-tab" id="wsExpenses">Expenses</li>
-                        <li class="nav-tab" id="wsDiscussions">Discussions</li>
-                        <li class="nav-tab" id="wsRisks">Risks</li>
-                        <li class="nav-tab" id="wsDocuments">Documents</li>
-                        <li class="nav-tab" id="wsProjectFinancials">Project Financials</li>
-                        <li class="gearIcon" id="wsGear"></li>
-                    </ul>
+                <menu id="workspace-nav">
+                    <li class="home-icon selected" id="wsHome"></li>
+                    <li class="nav-tab" id="wsTasks">Tasks</li>
+                    <li class="nav-tab" id="wsIssues">Issues</li>
+                    <li class="nav-tab" id="wsMembers">Members</li>
+                    <li class="nav-tab" id="wsExpenses">Expenses</li>
+                    <li class="nav-tab" id="wsDiscussions">Discussions</li>
+                    <li class="nav-tab" id="wsRisks">Risks</li>
+                    <li class="nav-tab" id="wsDocuments">Documents</li>
+                    <li class="nav-tab" id="wsProjectFinancials">Project Financials</li>
+                    <li class="gear-icon" id="wsGear"></li>
                 </menu>
                 <div id="modal-buttons">
-                    <button class="wsButton">Update Status</button>
-                    <button class="wsButton">Edit Profile</button>
+                    <button class="modal-button">Update Status</button>
+                    <button class="modal-button">Edit Profile</button>
                 </div>
             </div>
         </header>
@@ -126,7 +124,7 @@
                 </dl>
             </div>
         </div>
-        <div id="risk" class="widget" title="Risk">
+        <div id="risk" class="widget table" title="Risk">
             <div class="widget-header">
                 <div class="title">Risk</div>
                 <div class="stamped">Last Update 7/17 by Robin Sherwood</div>
@@ -158,7 +156,7 @@
                 </table>
             </div>
         </div>
-        <div id="open_issues" class="widget" title="Open Issues">
+        <div id="open_issues" class="widget table" title="Open Issues">
             <div class="widget-header">
                 <div class="title">Open Issues</div>
                 <div class="stamped">Last Update 7/17 by Robin Sherwood</div>
@@ -208,7 +206,7 @@
                 </table>
             </div>
         </div>
-        <div id="milestones" class="widget" title="Milestones">
+        <div id="milestones" class="widget table" title="Milestones">
             <div class="widget-header">
                 <div class="title">Milestones</div>
                 <div class="stamped">Last Update 7/17 by Robin Sherwood</div>
