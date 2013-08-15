@@ -70,10 +70,55 @@ var profile = [
     }
 ];
 
+var risks = [
+    {
+        name: 'Risks',
+        stamp: 'Last Update 7/15 by Tom Yang',
+        fields: [
+            {label: 'Description', type: 'longtext', value: 'Customer reported issues.'},
+            {label: 'Planned Start', type: 'date', value: new Date(1234577892021)},
+            {label: 'Planned Finish', type: 'date', value: new Date(2111578892021)},
+            {label: 'Approval Status', type: 'text', value: 'Pending'},
+            {label: 'Priority', type: 'text', value: 'Low'},
+            {label: 'Manager', type: 'text', value: 'Mr. T'},
+            {label: 'Phase', type: 'text', value: 'Planning'},
+            {label: 'Sponsor', type: 'text', value: 'Tang'},
+            {label: 'Budget', type: 'text', value: 33},
+            {label: 'Program', type: 'text', value: 'Customer Betterment'},
+            {label: 'Overall Score', type: 'text', value: 1.2},
+            {label: 'Risk Score', type: 'text', value: 1.1},
+            {label: 'Benefit Score', type: 'text', value: 0.7}
+        ]
+    },
+    {
+        name: 'Risks',
+        stamp: 'Last Update 7/15 by Herpa Derpa',
+        fields: [
+            { label: 'Description', type: 'longtext', value: 'Profile for the Herpin of the derps.'},
+            {label: 'Planned Start', type: 'date', value: new Date(2234577892021)},
+            {label: 'Planned Finish', type: 'date', value: new Date(2234578892021)},
+            {label: 'Approval Status', type: 'text', value: 'GetRDone'},
+            {label: 'Priority', type: 'text', value: 'Numero Uno'},
+            {label: 'Manager', type: 'text', value: 'Bill Paxton'},
+            {label: 'Phase', type: 'text', value: 'Locked'},
+            {label: 'Sponsor', type: 'text', value: 'Bill Murray'},
+            {label: 'Budget', type: 'text', value: 1000000},
+            {label: 'Program', type: 'text', value: 'Yes'},
+            {label: 'Overall Score', type: 'text', value: 8008},
+            {label: 'Risk Score', type: 'text', value: 1337},
+            {label: 'Benefit Score', type: 'text', value: 9001}
+        ]
+    }
+]
+
 app.use(express.static(__dirname));
+
+function getRisksForEnt(ent) {
+    return ent==='derp' ? risks[1] : risks[0];
+}
+
 function getStatusForEnt(ent) {
     return ent==='derp' ? status[1] : status[0];
-
 }
 
 function getProfileForEnt(ent) {
@@ -100,6 +145,7 @@ app.get('/widgets/:entid', function(req,res){
     var data =[];
     data.push(getStatusForEnt(ent));
     data.push(getProfileForEnt(ent));
+    data.push(getRisksForEnt(ent));
     res.send(JSON.stringify(data));
     res.end();
 });

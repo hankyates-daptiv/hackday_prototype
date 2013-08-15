@@ -67,6 +67,7 @@ img {
 
 main {
     padding: 0 1em;
+    margin-bottom: -15px;
 }
 
 #workspace-header {
@@ -207,43 +208,37 @@ main {
     }
 
     .widget-body {
-        padding:.5em .8em;
+        padding: .5em .8em;
 
-        dl.text{
-            border-top:.1em dotted #b4b7b4;
+        dl.text, dl.date {
+            border-top: .1em dotted #b4b7b4;
             overflow: auto;
-        }
-
-        dt.text {
-            float: left;
-            font-weight: 700;
-            margin-right: 0.5em;
             margin-bottom: 0.2em;
         }
 
-        dd.text {
-            display:inline-block;
+        dt.text, dt.date {
+            float: left;
+            font-weight: 700;
+            margin-right: 0.5em;
+        }
+
+        dd.text, dd.date {
             float: right;
-            padding:.5em .8em;
-            margin:0em;
-            border:0em;
-            width:45%;
+            padding: .5em .8em;
             text-align:right;
         }
 
         dl.date {
-            overflow:auto;
         }
 
         dt.date {
-            float: left;
         }
 
         dd.date{
-            float: right;
         }
 
         dl.longtext {
+            margin-bottom: 0.6em;
         }
 
         dt.longtext{
@@ -284,13 +279,12 @@ main {
         }
     }
 
-}
-
-.widget.table {
-    .widget-body {
+    .widget-body.table {
         padding: 0;
     }
+
 }
+
 
 footer {
     position:fixed;
