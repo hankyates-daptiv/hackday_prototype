@@ -5,23 +5,23 @@ var watch = require('node-watch'),
     express = require('express'),
     app = express();
 
-switch(process.argv[2]){
-    default:
-    case 'help':
-        help();
+switch (process.argv[2]) {
+default:
+case 'help':
+    help();
     break;
-    case 'server':
-        server();
+case 'server':
+    server();
     break;
-    case 'compile':
-        compile();
+case 'compile':
+    compile();
     break;
-    case 'watch':
-        watch();
+case 'watch':
+    watch_task();
     break;
 }
 
-function server () {
+function server() {
     var status = [
         {
             name: 'Status',
@@ -131,40 +131,40 @@ function server () {
                 {label: 'Benefit Score', type: 'text', value: 9001}
             ]
         }
-    ]
+    ];
 
     app.use(express.static(__dirname));
 
     function getRisksForEnt(ent) {
-        return ent==='derp' ? risks[1] : risks[0];
+        return ent === 'derp' ? risks[1] : risks[0];
     }
 
     function getStatusForEnt(ent) {
-        return ent==='derp' ? status[1] : status[0];
+        return ent === 'derp' ? status[1] : status[0];
     }
 
     function getProfileForEnt(ent) {
-        return ent==='derp' ? profile[1] : profile[0];
+        return ent === 'derp' ? profile[1] : profile[0];
     }
 
-    app.get('/profile/:entid', function(req,res) {
+    app.get('/profile/:entid', function (req, res) {
         var ent = req.params.entid;
-        console.dir('serving /profile/'+ent);
+        console.dir('serving /profile/' + ent);
         res.send(JSON.stringify(getProfileForEnt(ent)));
         res.end();
     });
 
-    app.get('/status/:entid', function(req,res) {
+    app.get('/status/:entid', function (req, res) {
         var ent = req.params.entid;
-        console.dir('serving /status/'+ent);
+        console.dir('serving /status/' + ent);
         res.send(JSON.stringify(getStatusForEnt(ent)));
         res.end();
     });
 
-    app.get('/widgets/:entid', function(req,res){
+    app.get('/widgets/:entid', function (req, res) {
         var ent = req.params.entid;
         console.dir('serving /widgets/' + ent);
-        var data =[];
+        var data = [];
         data.push(getStatusForEnt(ent));
         data.push(getProfileForEnt(ent));
         data.push(getRisksForEnt(ent));
@@ -172,16 +172,16 @@ function server () {
         res.end();
     });
 
-    app.get('/:entid', function(req,res) {
+    app.get('/:entid', function (req, res) {
         var ent = req.params.entid;
-        res.redirect('/#/index.html?entid='+ent);
+        res.redirect('/#/index.html?entid=' + ent);
     });
 
     console.dir('Express started listening on port 8000');
     app.listen(8000);
 }
 
-function compile (filename) {
+function compile(filename) {
     sass.render({
         data: fs.readFileSync('css/prototype.scss'),
         success: function (css) {
@@ -194,13 +194,13 @@ function compile (filename) {
     });
 }
 
-function watch () {
+function watch_task() {
     watch('css/prototype.scss', function (filename) {
         compile(filename);
     });
 }
 
-function help () {
+function help() {
     console.log("Options:");
     console.log("  help");
     console.log("  server");
