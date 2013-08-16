@@ -111,6 +111,7 @@ main {
         background-repeat: no-repeat;
         background-size: 1.5em; }
       #workspace-header #header-right #workspace-nav li.gear-icon {
+        background-image: url('../images/gear.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: 1.5em;
