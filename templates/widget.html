@@ -1,9 +1,9 @@
 <div class="widget-header">
     <div class="title">{{widget.name}}</div>
-    <button class="expander is-expanded" ng-click="console.log('clicked it')">-</button>
+    <button class="expander expanded" ng-click="toggle($event)">{{hidebody | plusMinus}}</button>
     <div class="stamped">{{widget.stamp}}</div>
 </div>
-<div class="widget-body">
+<div class="widget-body" ng-hide="hidebody">
     <div ng-repeat="field in widget.fields" ng-switch="field.type" class="field {{field.type}}">
         <ng-textfield ng-switch-when="text"></ng-textfield>
         <ng-longtextfield ng-switch-when="longtext"></ng-longtextfield>

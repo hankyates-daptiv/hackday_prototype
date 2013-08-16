@@ -1,3 +1,16 @@
+function expanderControllerSetup(scope) {
+    console.log('dies has a controlador');
+    scope.hidebody = false;
+    scope.toggle = function(event) {
+        console.log('i as toggled!');
+        scope.hidebody = !scope.hidebody;
+        setTimeout(function(){
+            console.log('domasonry()');
+            masonry.layout();
+        },50);
+    };
+}
+
 var myApp = angular.module('myApp', [])
     .controller('dashboard', function ($scope, $http, $location) {
         var search = $location.search();
@@ -5,10 +18,15 @@ var myApp = angular.module('myApp', [])
             return res.data;
         });
     })
+    .filter('plusMinus', function(){
+        return function(value) {
+            return value ? '+' : '-';
+        };
+    })
     .directive('ngWidget', function () {
         return {
             controller: function($scope) {
-                $scope.console = window.console;
+               expanderControllerSetup($scope); 
             },
             restrict: 'EACM',
             templateUrl: 'templates/widget.html'
@@ -16,6 +34,9 @@ var myApp = angular.module('myApp', [])
     })
     .directive('ngTablewidget', function () {
         return {
+            controller: function($scope) {
+               expanderControllerSetup($scope); 
+            },
             restrict: 'EACM',
             templateUrl: 'templates/table-widget.html'
         }
