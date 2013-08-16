@@ -58,11 +58,11 @@
         <div ng-controller="dashboard">
             <div id="container" width="100%">
                 <div ng-repeat="widget in widgets" ng-switch="widget.name" id="{{widget.name}}" class="widget" title="{{widget.name}}">
-                    <ng-widget ng-switch-when="Status"></ng-widget>
-                    <ng-widget ng-switch-when="Profile"></ng-widget>
-                    <ng-tablewidget ng-switch-when="Risks"></ng-tablewidget>
-                    <ng-tablewidget ng-switch-when="Open-issues"></ng-tablewidget>
-                    <ng-tablewidget ng-switch-when="Milestones"></ng-tablewidget>
+                    <div ng-widget ng-switch-when="Status"></div>
+                    <div ng-widget ng-switch-when="Profile"></div>
+                    <div ng-tablewidget ng-switch-when="Risks"></div>
+                    <div ng-tablewidget ng-switch-when="Open-issues"></div>
+                    <div ng-tablewidget ng-switch-when="Milestones"></div>
                 </div>
             </div>
         </div>
