@@ -1,6 +1,9 @@
 var myApp = angular.module('myApp', [])
-    .controller('dashboard', function ($scope, $http) {
-        $scope.widgets = $http.get('/widgets/dierp').then(function (res) {
+    .controller('dashboard', function ($scope, $http, $location) {
+		var search = $location.search();
+		console.log(search);
+        $scope.widgets = $http.get('/widgets/' + search.entid).then(function (res) {
+            console.log(res.data[0]);
             return res.data;
         });
     })
