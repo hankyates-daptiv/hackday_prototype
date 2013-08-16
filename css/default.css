@@ -18,6 +18,9 @@ img {
   vertical-align: bottom; }
 
 #global-nav {
+  position: fixed;
+  top: 0;
+  z-index: 10;
   width: 100%;
   overflow: auto;
   background-color: #697069;
@@ -46,7 +49,8 @@ img {
       background-color: #c7c9c7 !important; }
 
 main {
-  padding: 0 1em; }
+  padding: 0 1em 1.3em;
+  margin-top: 4em; }
 
 #workspace-header {
   position: relative;
@@ -107,6 +111,7 @@ main {
         background-repeat: no-repeat;
         background-size: 1.5em; }
       #workspace-header #header-right #workspace-nav li.gear-icon {
+        background-image: url('../images/gear.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: 1.5em;
@@ -203,4 +208,5 @@ footer {
   font-size: 12px;
   border-top: 1px solid #c2c2c2;
   background-color: #eaeaea;
-  z-index: 40; }
+  z-index: 40;
+  height: 1.3em; }

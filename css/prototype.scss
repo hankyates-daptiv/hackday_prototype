@@ -22,6 +22,9 @@ img {
 }
 
 #global-nav {
+    position: fixed;
+    top: 0;
+    z-index: 10;
     width: 100%;
     overflow: auto;
     background-color:#697069;
@@ -66,7 +69,8 @@ img {
 }
 
 main {
-    padding: 0 1em;
+    padding: 0 1em 1.3em;
+    margin-top: 4em;
 }
 
 #workspace-header {
@@ -151,6 +155,7 @@ main {
             }
 
             li.gear-icon{
+                background-image: url('../images/gear.png');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: 1.5em; 
@@ -283,7 +288,6 @@ main {
     }
 }
 
-
 footer {
     position:fixed;
     padding:5px 16px;
@@ -294,4 +298,5 @@ footer {
     border-top:1px solid #c2c2C2;
     background-color:#eaeaea;
     z-index:40;
+    height: 1.3em;
 }
