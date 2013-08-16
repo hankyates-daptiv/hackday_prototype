@@ -17,6 +17,14 @@ body {
 img {
   vertical-align: bottom; }
 
+button.expander {
+  margin-top: 5px;
+  margin-right: 5px;
+  float: right;
+  width: 15px;
+  height: 10px;
+  text-align: middle; }
+
 #global-nav {
   position: fixed;
   top: 0;

@@ -7,6 +7,9 @@ var myApp = angular.module('myApp', [])
     })
     .directive('ngWidget', function () {
         return {
+            controller: function($scope) {
+                $scope.console = window.console;
+            },
             restrict: 'EACM',
             templateUrl: 'templates/widget.html'
         }
