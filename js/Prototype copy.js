@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', [])
     .controller('dashboard', function ($scope, $http, $location) {
-        var search = $location.search();
+		var search = $location.search();
         $scope.widgets = $http.get('/widgets/' + search.entid).then(function (res) {
             return res.data;
         });
@@ -8,41 +8,41 @@ var myApp = angular.module('myApp', [])
     .directive('ngWidget', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'templates/widget.html'
+            templateUrl: 'widget.html'
         }
     })
     .directive('ngTablewidget', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'templates/table-widget.html'
+            templateUrl: 'table-widget.html'
         }
     })
     .directive('ngTextfield', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'templates/text.html'
+            templateUrl: 'text.html'
         }
     })
     .directive('ngLongtextfield', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'templates/longtext.html'
+            templateUrl: 'longtext.html'
         }
     })
-    .filter('ppmLongDate', function($filter) {
-        return function (input) {
-            return $filter('date')(input, 'medium');
-        }
-    })
-    .filter('ppmShortDate', function($filter) {
-        return function (input) {
-            return $filter('date')(input, 'MM/dd/yyyy');
-        }
-    })
+	.filter('ppmLongDate', function($filter) {
+		return function (input) {
+			return $filter('date')(input, 'medium');
+		}
+	})
+	.filter('ppmShortDate', function($filter) {
+		return function (input) {
+			return $filter('date')(input, 'MM/dd/yyyy');
+		}
+	})
     .directive('ngDatefield', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'templates/date.html'
+            templateUrl: 'date.html'
         }
     })
     .directive('ngRisksRow', function () {

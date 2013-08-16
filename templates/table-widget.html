@@ -3,28 +3,20 @@
     <div class="stamped">{{widget.stamp}}</div>
 </div>
 <div class="widget-body table">
-    <table>
+    <table ng-switch="widget.name">
         <thead>
             <tr>
-                <th>Item</th>
-                <th>Owner</th>
-                <th>Due Date</th>
-                <th>Actions</th>
+				<th ng-repeat="val in widget.headers">{{val}}</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>DNS Configuration</td>
-                <td>Dave Lindquist</td>
-                <td>7/26/2012</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Update Project Plan</td>
-                <td>Tom Ford</td>
-                <td>7/28/2012</td>
-                <td></td>
-            </tr>
+        <tbody ng-switch-when="Risks">
+			<tr ng-repeat="row in widget.rows" ng-risks-row class="data-row"><tr>
+        </tbody>
+        <tbody ng-switch-when="Milestones">
+			<tr ng-repeat="row in widget.rows" ng-milestones-row class="data-row"></tr>
+        </tbody>
+        <tbody ng-switch-when="Open-issues">
+			<tr ng-repeat="row in widget.rows" ng-open-issues-row class="data-row"></tr>
         </tbody>
     </table>
 </div>
