@@ -1,34 +1,32 @@
 var myApp = angular.module('myApp', [])
     .controller('dashboard', function ($scope, $http, $location) {
-		var search = $location.search();
-		console.log(search);
+        var search = $location.search();
         $scope.widgets = $http.get('/widgets/' + search.entid).then(function (res) {
-            console.log(res.data[0]);
             return res.data;
         });
     })
     .directive('ngWidget', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'widget.html'
+            templateUrl: 'templates/widget.html'
         }
     })
     .directive('ngTablewidget', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'table-widget.html'
+            templateUrl: 'templates/table-widget.html'
         }
     })
     .directive('ngTextfield', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'text.html'
+            templateUrl: 'templates/text.html'
         }
     })
     .directive('ngLongtextfield', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'longtext.html'
+            templateUrl: 'templates/longtext.html'
         }
     })
     .directive('ngDatefield', function () {
@@ -37,6 +35,6 @@ var myApp = angular.module('myApp', [])
                 $scope.field.date = new Date($scope.field.value).toString();
             },
             restrict: 'EACM',
-            templateUrl: 'date.html'
+            templateUrl: 'templates/date.html'
         }
     });
