@@ -48,18 +48,18 @@ var myApp = angular.module('myApp', [])
     .directive('ngRisksRow', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'risks-row.html'
+            templateUrl: 'templates/risks-row.html'
         }
     })
     .directive('ngOpenIssuesRow', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'open-issues-row.html'
+            templateUrl: 'templates/open-issues-row.html'
         }
     })
     .directive('ngMilestonesRow', function () {
         return {
             restrict: 'EACM',
-            templateUrl: 'milestones-row.html'
+            templateUrl: 'templates/milestones-row.html'
         }
     });
