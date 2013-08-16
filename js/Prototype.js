@@ -1,4 +1,5 @@
 var masonry,
+    footbed,
     myApp = angular.module('myApp', [])
         .controller('dashboard', function ($scope, $http, $location) {
             var search = $location.search();
@@ -98,7 +99,34 @@ var masonry,
             restrict:'A',
             link: function(scope, element, attrs) {
               element.draggable({
-                revert:true
+                start: function (event, ui) {
+                    $('#dashboard').find('.widget').each(function (index, widget) {
+                        $(widget).find('.footbed').show();
+                    });
+                    element.addClass('dragging');
+                },
+                stop: function (event, ui) {
+                    $('.footbed').hide();
+                    element.removeClass('dragging');
+                    masonry.layout();
+                }
+              });
+            }
+          };
+        })
+        .directive('droppable', function($compile) {
+          return {
+            restrict: 'A',
+            link: function(scope, element, attrs){
+              element.droppable({
+                drop: function(event, ui) {
+                    var dragged = ui.draggable,
+                        droppedTo = element.parent();
+
+                        droppedTo.before(dragged);
+                        masonry.reloadItems();
+                },
+                hoverClass: "over"
               });
             }
           };

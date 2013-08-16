@@ -17,6 +17,12 @@ body {
 img {
   vertical-align: bottom; }
 
+.dragging {
+  z-index: 20; }
+
+.over {
+  background-color: red !important; }
+
 #global-nav {
   position: fixed;
   top: 0;
@@ -128,6 +134,12 @@ main {
         font-weight: 500; }
         #workspace-header #header-right #modal-buttons .modal-button:hover {
           background-color: #99b6d1; }
+
+.footbed {
+  margin: 0.5em;
+  padding: 0.5em;
+  background-color: #78a76d;
+  color: white; }
 
 .widget {
   margin: 0em 0em 1em 0em;
