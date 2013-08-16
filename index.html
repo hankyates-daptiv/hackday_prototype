@@ -7,6 +7,7 @@
     <link type="text/css" rel="stylesheet" href="css/default.css" />
     <link href="css/introjs.css" rel="stylesheet">
     <script src="js/jquery.min.js" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/intro.min.js"></script>
     <script type="text/javascript" src="js/intro.js"></script>
@@ -56,7 +57,7 @@
             </div>
         </header>
         <div id="dashboard" ng-controller="dashboard">
-            <div ng-repeat="widget in widgets" ng-switch="widget.name" id="{{widget.name}}" class="widget" title="{{widget.name}}">
+            <div draggable ng-repeat="widget in widgets" ng-switch="widget.name" id="{{widget.name}}" class="widget" title="{{widget.name}}">
                 <div ng-widget ng-switch-when="Status"></div>
                 <div ng-widget ng-switch-when="Profile"></div>
                 <div ng-tablewidget ng-switch-when="Risks"></div>
