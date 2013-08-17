@@ -7,11 +7,12 @@
     <link type="text/css" rel="stylesheet" href="css/default.css" />
     <link href="css/introjs.css" rel="stylesheet">
     <script src="js/jquery.min.js" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/intro.min.js"></script>
-    <script type="text/javascript" src="js/Prototype.js"></script>
     <script type="text/javascript" src="js/intro.js"></script>
     <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="js/Prototype.js"></script>
 </head>
 <body>
     <menu data-step="1" data-intro="New Enterprise Navigation tabs" type="toolbar" id="global-nav">
@@ -55,32 +56,19 @@
                 </div>
             </div>
         </header>
-        <div ng-controller="dashboard">
-            <div id="container" width="100%">
-                <div ng-repeat="widget in widgets" ng-switch="widget.name" id="{{widget.name}}" class="widget" title="{{widget.name}}">
-                    <div ng-widget ng-switch-when="Status"></div>
-                    <div ng-widget ng-switch-when="Profile"></div>
-                    <div ng-tablewidget ng-switch-when="Risks"></div>
-                    <div ng-tablewidget ng-switch-when="Open-issues"></div>
-                    <div ng-tablewidget ng-switch-when="Milestones"></div>
-                </div>
+        <div id="dashboard" ng-controller="dashboard">
+            <div draggable ng-repeat="widget in widgets" ng-switch="widget.name" id="{{widget.name}}" class="widget" title="{{widget.name}}">
+                <div droppable class="footbed" style="display:none;">Drag here to reorder.</div>
+                <div ng-widget ng-switch-when="Status"></div>
+                <div ng-widget ng-switch-when="Profile"></div>
+                <div ng-tablewidget ng-switch-when="Risks"></div>
+                <div ng-tablewidget ng-switch-when="Open-issues"></div>
+                <div ng-tablewidget ng-switch-when="Milestones"></div>
             </div>
         </div>
     </main>
     <footer>
         <div>Company Confidential Copyright &copy; Daptiv 2011</div>
     </footer>
-    <script>
-        window.masonry = null;
-        setTimeout(function(){
-            console.log('running masonry');
-            var container = document.getElementById('container');
-            masonry = new Masonry( container, {
-                // options
-                columnWidth: 499,
-                itemSelector: '.widget'
-            });
-        },500);
-    </script>
 </body>
 </html>
