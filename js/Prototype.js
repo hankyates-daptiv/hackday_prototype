@@ -124,7 +124,8 @@ var masonry,
                 },
                 stop: function (event, ui) {
                     element.removeClass('dragging');
-                }
+                },
+                revert: true
               });
             }
           };
@@ -139,10 +140,11 @@ var masonry,
                         droppedTo = element;
 
                         droppedTo.before(dragged);
+                        dragged.draggable({revert: false})
                         masonry.reloadItems();
                         masonry.layout();
                 },
-                hoverClass: "over"
+                hoverClass: 'over'
               });
             }
           };
