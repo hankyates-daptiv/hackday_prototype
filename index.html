@@ -57,8 +57,7 @@
             </div>
         </header>
         <div id="dashboard" ng-controller="dashboard">
-            <div draggable ng-repeat="widget in widgets" ng-switch="widget.name" id="{{widget.name}}" class="widget" title="{{widget.name}}">
-                <div droppable class="footbed" style="display:none;">Drag here to reorder.</div>
+            <div draggable droppable ng-repeat="widget in widgets" ng-switch="widget.name" id="{{widget.name}}" class="widget" title="{{widget.name}}">
                 <div ng-widget ng-switch-when="Status"></div>
                 <div ng-widget ng-switch-when="Profile"></div>
                 <div ng-tablewidget ng-switch-when="Risks"></div>

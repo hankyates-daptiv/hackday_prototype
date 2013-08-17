@@ -34,10 +34,6 @@ button.expander {
     z-index: 20;
 }
 
-.over {
-    background-color: red !important;
-}
-
 #global-nav {
     position: fixed;
     top: 0;
@@ -201,12 +197,10 @@ main {
     }
 }
 
-.footbed {
-    margin: 0.5em;
-    padding: 0.5em;
-    background-color: #78a76d;
-    color: #fff;
+.over {
+    box-shadow: 0 0 15px 5px #6691ba;
 }
+
 
 .widget {
     margin: 0em 0em 1em 0em;

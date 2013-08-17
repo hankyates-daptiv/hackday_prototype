@@ -1,8 +1,6 @@
 function expanderControllerSetup(scope) {
-    console.log('dies has a controlador');
     scope.hidebody = false;
     scope.toggle = function(event) {
-        console.log('i as toggled!');
         scope.hidebody = !scope.hidebody;
         setTimeout(function(){
             masonry.layout();
@@ -33,9 +31,9 @@ var masonry,
                         });
                     }
                 },
-            	controller: function($scope) {
-            	   expanderControllerSetup($scope); 
-            	},
+                controller: function($scope) {
+                   expanderControllerSetup($scope); 
+                },
                 restrict: 'EACM',
                 templateUrl: 'templates/widget.html'
             }
@@ -122,15 +120,10 @@ var masonry,
             link: function(scope, element, attrs) {
               element.draggable({
                 start: function (event, ui) {
-                    $('#dashboard').find('.widget').each(function (index, widget) {
-                        $(widget).find('.footbed').show();
-                    });
                     element.addClass('dragging');
                 },
                 stop: function (event, ui) {
-                    $('.footbed').hide();
                     element.removeClass('dragging');
-                    masonry.layout();
                 }
               });
             }
@@ -143,10 +136,11 @@ var masonry,
               element.droppable({
                 drop: function(event, ui) {
                     var dragged = ui.draggable,
-                        droppedTo = element.parent();
+                        droppedTo = element;
 
                         droppedTo.before(dragged);
                         masonry.reloadItems();
+                        masonry.layout();
                 },
                 hoverClass: "over"
               });
