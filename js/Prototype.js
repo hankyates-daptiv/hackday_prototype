@@ -121,11 +121,11 @@ var masonry,
               element.draggable({
                 start: function (event, ui) {
                     element.addClass('dragging');
+                    element.draggable({revert: true});
                 },
                 stop: function (event, ui) {
                     element.removeClass('dragging');
-                },
-                revert: true
+                }
               });
             }
           };
