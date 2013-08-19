@@ -22,8 +22,8 @@ button.expander {
   margin-right: 5px;
   float: right;
   width: 15px;
-  height: 10px;
-  line-height: 15px; }
+  line-height: 15px;
+  cursor: pointer; }
 
 .animating {
   z-index: 20; }

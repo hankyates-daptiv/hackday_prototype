@@ -1,7 +1,21 @@
+
 var masonry,
     footbed,
     myApp = angular.module('myApp', ['ngAnimate'])
         .controller('dashboard', function ($scope, $http, $location) {
+            $scope.doData = function(event) {
+                var btn = $(event.currentTarget);
+                if(btn.val() == 'derp'){
+                    btn.val('ent');
+                }
+                else {
+                    btn.val('derp');
+                }
+                $scope.widgets = $http.get('/widgets/' + btn.val())
+                    .then(function (res) {
+                        return res.data;
+                    });
+            }
             var search = $location.search();
             $scope.widgets = $http.get('/widgets/' + search.entid).then(function (res) {
                 return res.data;
@@ -20,6 +34,9 @@ var masonry,
                             columnWidth: 460,
                             itemSelector: '.widget'
                         });
+                        var btn = jQuery('.widget').first().find('button').first();
+                        btn.attr('data-intro','Super button of awesome!');
+                        btn.attr('data-step', '7');
                     }
                 },
                 restrict: 'EACM',

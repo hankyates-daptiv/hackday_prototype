@@ -57,14 +57,15 @@
                 </div>
             </div>
         </header>
-        <div id="dashboard" ng-controller="dashboard">
+        <div ng-controller="dashboard"><button ng-new-data ng-click="doData($event)">data</button>
+        <div id="dashboard" >
             <div draggable droppable ng-repeat="widget in widgets" ng-switch="widget.name" id="{{widget.name}}" class="widget" title="{{widget.name}}">
                 <div ng-widget ng-switch-when="Status"></div>
                 <div ng-widget ng-switch-when="Profile"></div>
                 <div ng-tablewidget ng-switch-when="Risks"></div>
                 <div ng-tablewidget ng-switch-when="Open-issues"></div>
                 <div ng-tablewidget ng-switch-when="Milestones"></div>
-            </div>
+            </div></div>
         </div>
     </main>
     <footer>
