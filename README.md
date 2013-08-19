@@ -5,6 +5,7 @@
 * James Triklin(sp?)
 * Brian Lenihan
 * Hank Yates
+* Aaron Schmidt(sp?)
 
 ## Installation
 * `npm install`
