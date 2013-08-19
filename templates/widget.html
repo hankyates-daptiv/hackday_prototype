@@ -1,9 +1,9 @@
 <div class="widget-header">
     <div class="title">{{widget.name}}</div>
-    <button class="expander expanded" ng-click="toggle($event)">{{hidebody | plusMinus}}</button>
+    <button class="expander expanded" ng-init="hidebody=false" ng-click="hidebody=!hidebody">{{hidebody | plusMinus}}</button>
     <div class="stamped">{{widget.stamp}}</div>
 </div>
-<div class="widget-body" ng-hide="hidebody">
+<div class="widget-body widget-animation" ng-class="{hidebody:hidebody}">
     <div ng-repeat="field in widget.fields" ng-switch="field.type" class="field {{field.type}}">
         <ng-textfield ng-switch-when="text"></ng-textfield>
         <ng-longtextfield ng-switch-when="longtext"></ng-longtextfield>

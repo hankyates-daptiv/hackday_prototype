@@ -23,10 +23,14 @@ button.expander {
   float: right;
   width: 15px;
   height: 10px;
-  text-align: middle; }
+  line-height: 15px; }
+
+.animating {
+  z-index: 20; }
 
 .dragging {
-  z-index: 20; }
+  z-index: 20;
+  opacity: 0.4; }
 
 #global-nav {
   position: fixed;

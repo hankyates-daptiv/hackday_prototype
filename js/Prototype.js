@@ -1,15 +1,6 @@
-function expanderControllerSetup(scope) {
-    scope.hidebody = false;
-    scope.toggle = function(event) {
-        scope.hidebody = !scope.hidebody;
-        setTimeout(function(){
-            masonry.layout();
-        },0);
-    };
-}
 var masonry,
     footbed,
-    myApp = angular.module('myApp', [])
+    myApp = angular.module('myApp', ['ngAnimate'])
         .controller('dashboard', function ($scope, $http, $location) {
             var search = $location.search();
             $scope.widgets = $http.get('/widgets/' + search.entid).then(function (res) {
@@ -31,9 +22,6 @@ var masonry,
                         });
                     }
                 },
-                controller: function($scope) {
-                   expanderControllerSetup($scope); 
-                },
                 restrict: 'EACM',
                 templateUrl: 'templates/widget.html'
             }
@@ -43,12 +31,42 @@ var masonry,
                 link: function () {
                     masonry.layout();
                 },
-            controller: function($scope) {
-               expanderControllerSetup($scope); 
-            },
                 restrict: 'EACM',
                 templateUrl: 'templates/table-widget.html'
             }
+        })
+        .animation('.widget-animation', function(){
+            var layout = function(){masonry.layout();};
+            return {
+                addClass: function(element,className,done) {
+                    if(className == 'hidebody') {
+                        jQuery(element).hide(500,
+                            function(){
+                                layout();
+                                done();
+                            });
+                    }
+                    else {
+                        done();
+                    }
+                },
+                removeClass: function(element,className,done) {
+                    if(className=='hidebody'){
+                        var wb = jQuery(element).parent().parent();
+                        wb.addClass('animating');
+                        
+                        jQuery(element).show(500,
+                            function(){
+                                setTimeout(function(){wb.removeClass('animating');},400);
+                                layout();
+                                done();
+                            });
+                    }
+                    else {
+                        done();
+                    }
+                }
+            };
         })
         .directive('ngTextfield', function () {
             return {

@@ -1,9 +1,9 @@
 <div class="widget-header">
     <div class="title">{{widget.name}}</div>
-    <button class="expander expanded" ng-click="toggle($event)">{{hidebody | plusMinus}}</button>
+    <button class="expander expanded" ng-init="hidebody=false" ng-click="hidebody=!hidebody">{{hidebody | plusMinus}}</button>
     <div class="stamped">{{widget.stamp}}</div>
 </div>
-<div class="widget-body table" ng-hide="hidebody">
+<div class="widget-body table widget-animation" ng-class="{hidebody:hidebody}">
     <table ng-switch="widget.name">
         <thead>
             <tr>
