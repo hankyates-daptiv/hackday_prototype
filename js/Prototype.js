@@ -34,9 +34,12 @@ var masonry,
                             columnWidth: 460,
                             itemSelector: '.widget'
                         });
-                        var btn = jQuery('.widget').first().find('button').first();
-                        btn.attr('data-intro','Super button of awesome!');
-                        btn.attr('data-step', '7');
+                        var wid = jQuery('.widget').eq(1);
+                        wid.attr('data-intro','Widgets can be rearranged with drag and drop!');
+                        wid.attr('data-step','3');
+                        var btn = jQuery('.widget').eq(1).find('button').first();
+                        btn.attr('data-intro','Hide data that gets in the way with the helpful Minimize Button!');
+                        btn.attr('data-step', '4');
                     }
                 },
                 restrict: 'EACM',
@@ -166,6 +169,7 @@ var masonry,
           };
         })
         .directive('droppable', function($compile) {
+
           return {
             restrict: 'A',
             link: function(scope, element, attrs){
@@ -178,7 +182,14 @@ var masonry,
                         dragged.draggable({revert: false})
                         masonry.reloadItems();
                         masonry.layout();
-                },
+                        setTimeout(function(){
+
+                            var intro = introJs();
+                            intro.exit();
+                            intro._currentStep=1;
+                            intro.start();
+                        },501);
+                    },
                 hoverClass: 'over'
               });
             }

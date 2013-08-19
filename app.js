@@ -77,15 +77,9 @@ function server() {
             fields: [
                 {label: 'Description', type: 'longtext', value: 'Profile for the Herpin of the derps.' },
                 {label: 'Planned Start', type: 'date', value: new Date(2234577892021)},
-                {label: 'Planned Finish', type: 'date', value: new Date(2234578892021)},
-                {label: 'Approval Status', type: 'text', value: 'GetRDone'},
-                {label: 'Priority', type: 'text', value: 'Numero Uno'},
                 {label: 'Manager', type: 'text', value: 'Bill Paxton'},
-                {label: 'Phase', type: 'text', value: 'Locked'},
                 {label: 'Sponsor', type: 'text', value: 'Bill Murray'},
                 {label: 'Budget', type: 'text', value: 1000000},
-                {label: 'Program', type: 'text', value: 'Yes'},
-                {label: 'Overall Score', type: 'text', value: 8008},
                 {label: 'Risk Score', type: 'text', value: 1337},
                 {label: 'Benefit Score', type: 'text', value: 9001}
             ]
@@ -128,12 +122,28 @@ function server() {
             ]
         },
         {// 1: derp data
-            name: 'Risks',
+            name: 'Open-issues',
             stamp: 'Last Update 8/18/2013 by Doc Brown',
             headers: ['Item', 'Owner', 'Due Date', 'Actions'],
             rows: [
                 {priority: 'Highest', description: 'Derps to few', dueDate: new Date(2014,7,11), assignee: 'Thing 1'},
-                {priority: 'Lower', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
+                {priority: 'MECHA', description: 'Too many herps', dueDate: new Date(2015, 8,16), assignee: 'Thing 2'},
                 {priority: 'Mediumly', description: 'You got your derp in my herp!', dueDate: new Date(2016, 1, 20), assignee: 'Tony Danza'}
             ]
         }
@@ -155,7 +165,15 @@ function server() {
             headers: ['Task Name', '%', 'Planned Finish'],
             rows: [
                 {task: 'New derpington conversion', percent: 98, plannedFinish: new Date(2013, 9, 2)},
-                {task: 'Add Derp-a-Herp app', percent: 101, plannedFinish: new Date(2014, 1, 2)}
+                {task: 'Add Derp-a-Herp app', percent: 101, plannedFinish: new Date(2014, 1, 2)},
+                {task: 'dummy data 1', percent: 42, plannedFinish: new Date(2013, 11, 22)},
+                {task: 'dummy data 1', percent: 42, plannedFinish: new Date(2013, 11, 22)},
+                {task: 'dummy data 1', percent: 42, plannedFinish: new Date(2013, 11, 22)},
+                {task: 'dummy data 1', percent: 42, plannedFinish: new Date(2013, 11, 22)},
+                {task: 'dummy data 1', percent: 42, plannedFinish: new Date(2013, 11, 22)},
+                {task: 'dummy data 1', percent: 42, plannedFinish: new Date(2013, 11, 22)},
+                {task: 'dummy data 1', percent: 42, plannedFinish: new Date(2013, 11, 22)},
+                {task: 'dummy data 1', percent: 42, plannedFinish: new Date(2013, 11, 22)}
             ]
         }
 

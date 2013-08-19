@@ -14,9 +14,19 @@
     <script type="text/javascript" src="js/intro.js"></script>
     <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
     <script type="text/javascript" src="js/Prototype.js"></script>
+    <script type="text/javascript">
+    $(document).keydown(function(event){
+        
+        if(event.keyCode == 72 && event.ctrlKey){
+            introJs().start();
+            event.stopPropogation();
+            return false;
+        }
+    })
+    </script>
 </head>
 <body>
-    <menu data-step="1" data-intro="New Enterprise Navigation tabs" type="toolbar" id="global-nav">
+    <menu type="toolbar" id="global-nav">
         <li class="home"><a href="#" class="home"><img src="images/daptiv-logo.png" alt="Daptiv Home" /></a></li>
         <li class="nav-tab"><a href="#">Recent</a></li>
         <li class="nav-tab"><a href="#">Dashboard</a></li>
@@ -36,10 +46,10 @@
                     <h2 class="workspace-name">FDL 550 Certification</h2>
                     <h3 class="workspace-type">Workspace Type Name</h3>
                 </div>
-                <button data-step="3" data-intro="View Selector - This is navigation for the current application context." class="view-selector">View Selector</button>
+                <button class="view-selector">View Selector</button>
             </div>
             <div id="header-right">
-                <menu data-step="2" data-intro="New Workspace Navigation" id="workspace-nav">
+                <menu id="workspace-nav">
                     <li class="home-icon selected" id="wsHome"></li>
                     <li class="nav-tab" id="wsTasks">Tasks</li>
                     <li class="nav-tab" id="wsIssues">Issues</li>
@@ -52,13 +62,13 @@
                     <li class="gear-icon" id="wsGear"></li>
                 </menu>
                 <div id="modal-buttons">
-                    <button data-step="4" data-intro="Use the latest modal to update your project status." class="modal-button">Update Status</button>
+                    <button data-step="1" data-intro="Use the latest modal to update your project status." class="modal-button">Update Status</button>
                     <button class="modal-button">Edit Profile</button>
                 </div>
             </div>
         </header>
         <div ng-controller="dashboard"><button ng-new-data ng-click="doData($event)">data</button>
-        <div id="dashboard" >
+        <div id="dashboard" data-step="2" data-intro="Sweet new AngularJS Widgets! For Productivity!">
             <div draggable droppable ng-repeat="widget in widgets" ng-switch="widget.name" id="{{widget.name}}" class="widget" title="{{widget.name}}">
                 <div ng-widget ng-switch-when="Status"></div>
                 <div ng-widget ng-switch-when="Profile"></div>
